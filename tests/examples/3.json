@@ -1,0 +1,32 @@
+[
+    {
+        "type": "html",
+        "start": 97,
+        "params": ["${name}"],
+        "param": 0,
+        "end": 134,
+        "code": "html`<host shadowDom>Hello, ${name}</host>`"
+    },
+    {
+        "type": "css",
+        "start": 211,
+        "params": ["${`random`}"],
+        "param": 0,
+        "end": 326,
+        "code": "css`\n        :host {\n            width: 200px;\n        }\n        :host {\n            width: ${`random`};\n        }\n    `"
+    },
+    {
+        "type": "css",
+        "start": 347,
+        "params": [],
+        "end": 420,
+        "code": "css`\n            :host {\n                width: 100px;\n            }\n        `"
+    },
+    {
+        "type": "css",
+        "start": 452,
+        "params": [],
+        "end": 541,
+        "code": "css`\n                :host {\n                    width: 100px;\n                }\n            `"
+    }
+]

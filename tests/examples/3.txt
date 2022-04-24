@@ -1,0 +1,36 @@
+import { c, html, css } from "atomico"; // 3.0kB
+
+function component({ name }) {
+    return html`<host shadowDom>Hello, ${name}</host>`;
+}
+
+component.props = {
+    name: String,
+};
+
+component.styles = [
+    css`
+        :host {
+            width: 200px;
+        }
+        :host {
+            width: ${`random`};
+        }
+    `,
+    [
+        css`
+            :host {
+                width: 100px;
+            }
+        `,
+        [
+            (((css`
+                :host {
+                    width: 100px;
+                }
+            `))),
+        ],
+    ],
+];
+
+customElements.define("my-component", c(component));

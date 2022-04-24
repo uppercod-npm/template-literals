@@ -1,0 +1,8 @@
+/**
+ * a`ignored`
+ */
+const x = b`found`;
+// c`ignored`
+const z = [z1`found`, z2`found`, z3`found`];
+
+const x1 = () => html`<found>${"param"}</found>`;

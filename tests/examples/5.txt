@@ -1,0 +1,52 @@
+import { md } from "../../../src/core";
+
+export const meta = {
+    path: "/Components/Stories",
+};
+
+export default md`
+# Stories
+
+control the [stories](./stories/story)
+
+~~~jsx
+<Stories>
+    <Story label="Input default">
+        <Input placeholder="Write..."></Input>
+    </Story>
+    <Story label="Input number">
+        <Input type="number" value="0"></Input>
+    </Story>
+</Stories>
+~~~
+
+## Props
+
+### Stories.props: ~Object~
+
+~~~tsx
+interface FieldBase {
+    type: string;
+    description?: string;
+    input?: any;
+}
+interface FieldGeneric extends FieldBase {
+    type: "toggle" | "text" | "number";
+}
+interface FieldGroups extends FieldBase {
+    type: "radio-groups";
+    options:
+        | string[]
+        | {
+              [value: string]: string;
+          };
+}
+interface Fields {
+    [field: string]: FieldGeneric | FieldGroups;
+}
+~~~
+
+${(<button>....</button>)}
+
+Defines the type of input that controls the story
+`;

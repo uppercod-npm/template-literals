@@ -1,0 +1,15 @@
+[
+    {
+        "type": "grapQL",
+        "start": 102,
+        "params": [
+            "${args.id}",
+            "${args.name}",
+            "${args.iconFile}",
+            "${args.elements}"
+        ],
+        "param": 0,
+        "end": 363,
+        "code": "grapQL`\n  mutation {\n    update ( id:\"${args.id}\" name:\"${args.name}\" iconFile:\"${args.iconFile}\" elements:${args.elements}){\n      id\n      name\n      iconFile\n      elements {\n        id name link\n        elements {\n          id name link\n        }\n      }\n    }\n  }`"
+    }
+]

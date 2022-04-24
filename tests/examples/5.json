@@ -1,0 +1,10 @@
+[
+    {
+        "type": "md",
+        "start": 118,
+        "params": ["${(<button>....</button>)}"],
+        "param": 0,
+        "end": 926,
+        "code": "md`\n# Stories\n\ncontrol the [stories](./stories/story)\n\n~~~jsx\n<Stories>\n    <Story label=\"Input default\">\n        <Input placeholder=\"Write...\"></Input>\n    </Story>\n    <Story label=\"Input number\">\n        <Input type=\"number\" value=\"0\"></Input>\n    </Story>\n</Stories>\n~~~\n\n## Props\n\n### Stories.props: ~Object~\n\n~~~tsx\ninterface FieldBase {\n    type: string;\n    description?: string;\n    input?: any;\n}\ninterface FieldGeneric extends FieldBase {\n    type: \"toggle\" | \"text\" | \"number\";\n}\ninterface FieldGroups extends FieldBase {\n    type: \"radio-groups\";\n    options:\n        | string[]\n        | {\n              [value: string]: string;\n          };\n}\ninterface Fields {\n    [field: string]: FieldGeneric | FieldGroups;\n}\n~~~\n\n${(<button>....</button>)}\n\nDefines the type of input that controls the story\n`"
+    }
+]

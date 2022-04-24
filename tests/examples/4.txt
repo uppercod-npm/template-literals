@@ -1,0 +1,26 @@
+export const mutateReq = (args: TWorkSpace): AxiosPromise<TWorkSpace[]> => {
+    const query = grapQL`
+  mutation {
+    update ( id:"${args.id}" name:"${args.name}" iconFile:"${args.iconFile}" elements:${args.elements}){
+      id
+      name
+      iconFile
+      elements {
+        id name link
+        elements {
+          id name link
+        }
+      }
+    }
+  }`;
+    return axios({
+        url: url,
+        method: "post",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        data: {
+            query: query,
+        },
+    });
+};
