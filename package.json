@@ -1,15 +1,26 @@
 {
     "name": "@uppercod/template-literals",
     "type": "module",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Capture the position of the template literals of a js, ts, tsx and jsx code",
     "publishConfig": {
         "access": "public"
     },
+    "main": "./dist/module.mjs",
+    "module": "./dist/module.mjs",
+    "types": "./types/module.d.ts",
+    "exports": {
+        ".": {
+            "require": "./dist/module.cjs",
+            "import": "./dist/module.mjs"
+        }
+    },
     "scripts": {
         "test": "uvu -r tsm tests",
         "types": "tsc",
-        "exports": "esbuild src/modules.ts --format=esm,cjs --dist=dist",
+        "exports:cjs": "esbuild ./src/module.ts --format=cjs --outfile=dist/module.cjs",
+        "exports:js": "esbuild ./src/module.ts --format=esm --outfile=dist/module.mjs",
+        "exports": "npm run exports:cjs && npm run exports:js",
         "prepublishOnly": "npm run test && npm run exports"
     },
     "repository": {
