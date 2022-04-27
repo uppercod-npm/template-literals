@@ -8,7 +8,8 @@
     },
     "scripts": {
         "test": "uvu -r tsm tests",
-        "exports": "exports ./src/module.ts --types --exports --main module",
+        "exports:cjs": "exports ./src/module.ts --dist cjs --format cjs",
+        "exports:esm": "exports ./src/module.ts --dist esm --types --exports --main module",
         "prepublishOnly": "npm run test && npm run exports"
     },
     "repository": {
@@ -22,7 +23,7 @@
     },
     "homepage": "https://github.com/uppercod-npm/template-literals#readme",
     "devDependencies": {
-        "@atomico/exports": "^0.27.0",
+        "@atomico/exports": "^0.28.1",
         "tsm": "^2.2.1",
         "typescript": "^4.6.3",
         "uvu": "^0.5.3"
