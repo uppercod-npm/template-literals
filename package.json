@@ -21,7 +21,7 @@
         "exports:cjs": "esbuild ./src/module.ts --format=cjs --outfile=dist/module.cjs",
         "exports:js": "esbuild ./src/module.ts --format=esm --outfile=dist/module.mjs",
         "exports": "npm run exports:cjs && npm run exports:js",
-        "prepublishOnly": "npm run test && npm run exports"
+        "prepublishOnly": "npm run test && npm run exports && npm run types"
     },
     "repository": {
         "type": "git",
