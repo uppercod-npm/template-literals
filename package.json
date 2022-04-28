@@ -18,8 +18,8 @@
     "scripts": {
         "test": "uvu -r tsm tests",
         "types": "tsc",
-        "exports:cjs": "esbuild ./src/module.ts --format=cjs --outfile=dist/module.cjs",
-        "exports:js": "esbuild ./src/module.ts --format=esm --outfile=dist/module.mjs",
+        "exports:cjs": "esbuild ./src/module.ts --platform=node --target=node16 --format=cjs --outfile=dist/module.cjs",
+        "exports:js": "esbuild ./src/module.ts  --target=esnext --format=esm --outfile=dist/module.mjs",
         "exports": "npm run exports:cjs && npm run exports:js",
         "prepublishOnly": "npm run test && npm run exports && npm run types"
     },
